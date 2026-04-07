@@ -1,0 +1,14 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+nav a {
+  color:rgb(77, 77, 247);
+}
+
+nav a:hover {
+  color:rgb(190, 190, 190);
+}
