@@ -5,10 +5,39 @@
   text-align: center;
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  
+}
+
 nav a {
-  color:rgb(77, 77, 247);
+  color:rgb(190, 190, 190);
 }
 
 nav a:hover {
-  color:rgb(190, 190, 190);
+  color:rgb(77, 77, 247);
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+}
+
+input {
+  margin: 10px 0;
+  padding: 8px;
+}
+
+p {
+  color: red;
+  font-size: 12px;
 }
