@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { generateResume } from "../api/AI";
+import { useNavigate } from "react-router-dom";
+
 
 function ResumeForm() {
   const [formData, setFormData] = useState({     // formdata is storing all inputs
@@ -34,18 +37,26 @@ function ResumeForm() {
     return newErrors;
   };
 
+  //const navigate = useNavigate();
+
   // submit
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const navigate = useNavigate();    // this is from React Router..It helps you navigate pages
 
-    const validationErrors = validate();
-    setErrors(validationErrors);
+const handleSubmit = async (e) => {   // runs when user clicks Submit button
+  e.preventDefault();   // it prevents page refresh..
 
-    if (Object.keys(validationErrors).length === 0) {
-      console.log("Form Data:", formData);
-      alert("Form submitted successfully!");
-    }
-  };
+  const aiResponse = await generateResume(formData);  // it calls our function..sends user data..waits for result...stores result in aiResponse
+
+  // store result
+  localStorage.setItem("resume", aiResponse); // Saves data in browser storage..here key is the "resume" and aiResponse is generated text..
+
+  navigate("/preview");
+};
+
+
+
+
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -81,7 +92,7 @@ function ResumeForm() {
         placeholder="Enter Skills"
         onChange={handleChange}
       />
-      <p>{errors.skills}</p>
+      <p className="errorMsg">{errors.skills}</p>
 
       <button type="submit">Submit</button>
     </form>

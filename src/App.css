@@ -38,6 +38,11 @@ input {
 }
 
 p {
+  color: white;
+  font-size: 14px;
+}
+
+  .errorMsg {
   color: red;
   font-size: 12px;
 }
