@@ -37,12 +37,33 @@ input {
   padding: 8px;
 }
 
-p {
-  color: white;
-  font-size: 14px;
-}
+
 
   .errorMsg {
   color: red;
   font-size: 12px;
+}
+
+.preview-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.resume-card {
+  width: 60%;
+  margin: auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4cafef;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
